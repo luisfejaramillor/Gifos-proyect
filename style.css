@@ -11,8 +11,9 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
 }
 
 .container .header {
@@ -36,10 +37,6 @@
           align-items: center;
 }
 
-.container .main {
-  border: 1px solid black;
-}
-
 .container .main .article1 {
   width: 100%;
   display: -webkit-box;
@@ -61,6 +58,7 @@
   text-align: center;
   color: #572EE5;
   margin-bottom: 31px;
+  line-height: 33px;
 }
 
 .container .main .article1 h1 span {
@@ -112,7 +110,131 @@
   position: absolute;
 }
 
+.container .main .article2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 31px;
+}
+
+.container .main .article2 h2 {
+  font-family: 'Montserrat', sans-serif;
+  width: 25%;
+  font-size: 16px;
+  color: #572EE5;
+  line-height: 25px;
+  text-align: center;
+}
+
+.container .main .article2 p {
+  font-family: 'Montserrat', sans-serif;
+  width: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: #572EE5;
+  line-height: 25px;
+}
+
+.container .main .trending-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 46px;
+  background: #F3F5F8;
+}
+
+.container .main .trending-section :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container .main .trending-section :first-child h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #572EE5;
+  line-height: 30px;
+  text-align: center;
+}
+
+.container .main .trending-section :first-child p {
+  margin-top: 7px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #000000;
+  line-height: 23px;
+  width: 50%;
+  text-align: center;
+}
+
 .container .footer {
-  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 47px;
+}
+
+.container .footer :first-child {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.container .footer ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 19px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 47px;
+}
+
+.container .footer .last-p {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 20px;
+  padding-bottom: 23px;
+  border-bottom: 5px solid #572EE5;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

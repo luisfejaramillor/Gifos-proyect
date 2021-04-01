@@ -6,7 +6,8 @@
 
 .container {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
+    border: 1px solid black;
 
     .header {
         border-top: 5px solid #572EE5;
@@ -23,8 +24,6 @@
     }
 
     .main {
-        border: 1px solid black;
-
         .article1 {
             width: 100%;
             display: flex;
@@ -38,6 +37,7 @@
                 text-align: center;
                 color: #572EE5;
                 margin-bottom: 31px;
+                line-height: 33px;
 
                 span {
                     font-size: 25px;
@@ -62,6 +62,7 @@
                 border: 1px solid #572EE5;
                 border-radius: 27px;
                 position: relative;
+
                 input {
                     height: 50px;
                     border: none;
@@ -70,7 +71,8 @@
                     padding-left: 16.46%;
                     outline: none;
                 }
-                img{
+
+                img {
                     width: 20px;
                     right: 20px;
                     top: 15px;
@@ -78,9 +80,102 @@
                 }
             }
         }
+
+        .article2 {
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            margin-top: 31px;
+
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+                width: 25%;
+                font-size: 16px;
+                color: #572EE5;
+                line-height: 25px;
+                text-align: center;
+            }
+
+            p {
+                font-family: 'Montserrat', sans-serif;
+                width: 50%;
+                text-align: center;
+                font-size: 14px;
+                color: #572EE5;
+                line-height: 25px;
+            }
+        }
+
+        // here will be the results of searching gifs in the search bar //
+
+        .trending-section {
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            padding-top: 46px;
+            background: #F3F5F8;
+            :first-child {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                width: 100%;
+
+                h2 {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 20px;
+                    color: #572EE5;
+                    line-height: 30px;
+                    text-align: center;
+                }
+
+                p {
+                    margin-top: 7px;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 16px;
+                    color: #000000;
+                    line-height: 23px;
+                    width: 50%;
+                    text-align: center;
+                }
+            }
+        }
+
     }
 
     .footer {
-        border: 1px solid black;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        width: 100%;
+        padding-top: 47px;
+        :first-child {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #000000;
+            letter-spacing: 0;
+        }
+
+        ul {
+            width: 100%;
+            display: flex;
+            gap: 19px;
+            justify-content: center;
+            margin-top: 24px;
+            margin-bottom: 47px;
+        }
+
+        .last-p {
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #000000;
+            letter-spacing: 0;
+            line-height: 20px;
+            padding-bottom: 23px;
+            border-bottom: 5px solid #572EE5;
+            text-align: center;
+        }
     }
 }
