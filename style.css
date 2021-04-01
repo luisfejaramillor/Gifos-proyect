@@ -1,1 +1,118 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.container .header {
+  border-top: 5px solid #572EE5;
+  padding: 24px 26px 17.2px 22px;
+  height: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .header .burguer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .main {
+  border: 1px solid black;
+}
+
+.container .main .article1 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .main .article1 h1 {
+  width: 72.8%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: #572EE5;
+  margin-bottom: 31px;
+}
+
+.container .main .article1 h1 span {
+  font-size: 25px;
+  color: #50E3C2;
+}
+
+.container .main .article1 img {
+  width: 72.8%;
+}
+
+.container .main .input-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container .main .input-search :first-child {
+  width: 89.6%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #572EE5;
+  border-radius: 27px;
+  position: relative;
+}
+
+.container .main .input-search :first-child input {
+  height: 50px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding-left: 16.46%;
+  outline: none;
+}
+
+.container .main .input-search :first-child img {
+  width: 20px;
+  right: 20px;
+  top: 15px;
+  position: absolute;
+}
+
+.container .footer {
+  border: 1px solid black;
+}
+/*# sourceMappingURL=style.css.map */
