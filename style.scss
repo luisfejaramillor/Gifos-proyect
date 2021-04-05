@@ -4,118 +4,208 @@
     box-sizing: border-box;
 }
 
+[data-tab-content] {
+    display: block;
+}.inactive[data-tab-content] {
+    display: none;
+}
+
+.container[class = "container dark"]{
+    --bg-general: #37383C; 
+    --bg-trending: #222326;
+    --h1-h2: #FFFFFF;
+    --p:  #FFFFFF;
+    --span: #50E3C2;
+    --border: #000000;
+    --bg-drop:#000000;
+    --opacity: 1;
+    --dropElements: #ffffff
+}
+
 .container {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
+    --bg-general: #FFFFFF; 
+    --bg-trending: #F3F5F8;
+    --h1-h2: #572EE5;
+    --p:  #000000;
+    --span: #50E3C2;
+    --border: #572EE5;
+    --bg-drop:#572EE5;
+    --opacity: 0.9;
+    --dropElements: #ffffff;
+
+    h1, h2{
+        color: var(--h1-h2);
+    }
+    p{
+        color: var(--p)
+    }
+
+
 
     .header {
-        border-top: 5px solid #572EE5;
+        border-top: 5px solid var(--border);
         padding: 24px 26px 17.2px 22px;
         height: 95px;
         display: flex;
         justify-content: space-between;
-
-        .burguer-button {
+        background: var(--bg-general);
+        div {
             display: flex;
             align-items: center;
         }
+
 
     }
 
     .main {
-        .article1 {
+        position: relative;
+        .drop-menu {
+            position: absolute;
+            height: 100%;
             width: 100%;
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
+            background: var(--bg-drop);
+            opacity: var(--opacity);
+            z-index: 1;
 
-            h1 {
-                width: 72.8%;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 25px;
-                text-align: center;
-                color: #572EE5;
-                margin-bottom: 31px;
-                line-height: 33px;
-
-                span {
-                    font-size: 25px;
-                    color: #50E3C2;
+            ul {
+                li {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 15px;
+                    color: var(--dropElements);
+                    text-align: center;
+                    line-height: 60px;
                 }
-            }
 
-            img {
-                width: 72.8%;
+                div {
+                    width: 41px;
+                    margin: 0 auto;
+                    border: 1px solid var(--bg-general);
+                    opacity: 0.5;
+                }
+
             }
+            /*
+            &.inactive {
+                display: none;
+            }
+            */
         }
 
-        .input-search {
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
-            width: 100%;
-
-            :first-child {
-                width: 89.6%;
+        .search-section {
+            background: var(--bg-general);
+            .article1 {
+                width: 100%;
                 display: flex;
-                border: 1px solid #572EE5;
-                border-radius: 27px;
-                position: relative;
+                flex-flow: column wrap;
+                align-items: center;
 
-                input {
-                    height: 50px;
-                    border: none;
-                    font-family: 'Roboto', sans-serif;
-                    font-size: 16px;
-                    padding-left: 16.46%;
-                    outline: none;
+                h1 {
+                    width: 72.8%;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 25px;
+                    text-align: center;
+                    margin-bottom: 31px;
+                    line-height: 33px;
+
+                    span {
+                        font-size: 25px;
+                       color: var(--span);
+                    }
                 }
 
                 img {
-                    width: 20px;
-                    right: 20px;
-                    top: 15px;
-                    position: absolute;
+                    width: 72.8%;
                 }
             }
-        }
 
-        .article2 {
-            width: 100%;
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
-            margin-top: 31px;
+            .input-search {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                width: 100%;
 
-            h2 {
-                font-family: 'Montserrat', sans-serif;
-                width: 25%;
-                font-size: 16px;
-                color: #572EE5;
-                line-height: 25px;
-                text-align: center;
+                :first-child {
+                    width: 89.6%;
+                    display: flex;
+                    border: 1px solid var(--border);
+                    border-radius: 27px;
+                    position: relative;
+                    background: var(--bg-general);
+                    input {
+                        height: 50px;
+                        border: none;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 16px;
+                        padding-left: 16.46%;
+                        outline: none;
+                    }
+
+                    img {
+                        width: 20px;
+                        right: 20px;
+                        top: 15px;
+                        position: absolute;
+                    }
+                }
             }
 
-            p {
-                font-family: 'Montserrat', sans-serif;
-                width: 50%;
-                text-align: center;
-                font-size: 14px;
-                color: #572EE5;
-                line-height: 25px;
+            .article2 {
+                width: 100%;
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                margin-top: 31px;
+
+                h2 {
+                    font-family: 'Montserrat', sans-serif;
+                    width: 25%;
+                    font-size: 16px;
+                    line-height: 25px;
+                    text-align: center;
+                }
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    width: 50%;
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 25px;
+                    padding-bottom: 45px;
+                }
+            }
+
+            .search-results {
+                display: flex;
+
+                &.inactive {
+                    display: none;
+                }
+            }
+            /*
+            &inactive {
+                display: none;
+            }
+            */
+        }
+
+        .favorite-section {
+            &.inactive {
+                display: none;
             }
         }
 
-        // here will be the results of searching gifs in the search bar //
 
         .trending-section {
+            background: var(--bg-trending);
             width: 100%;
             display: flex;
             flex-flow: column wrap;
             align-items: center;
             padding-top: 46px;
-            background: #F3F5F8;
+
             :first-child {
                 display: flex;
                 flex-flow: column wrap;
@@ -125,7 +215,6 @@
                 h2 {
                     font-family: 'Montserrat', sans-serif;
                     font-size: 20px;
-                    color: #572EE5;
                     line-height: 30px;
                     text-align: center;
                 }
@@ -134,14 +223,18 @@
                     margin-top: 7px;
                     font-family: 'Roboto', sans-serif;
                     font-size: 16px;
-                    color: #000000;
                     line-height: 23px;
                     width: 50%;
                     text-align: center;
+                    padding-bottom: 32px;
                 }
             }
+            
+            &.inactive {
+                display: none;
+            }
+            
         }
-
     }
 
     .footer {
@@ -150,10 +243,10 @@
         align-items: center;
         width: 100%;
         padding-top: 47px;
+        background: var(--bg-general);
         :first-child {
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
-            color: #000000;
             letter-spacing: 0;
         }
 
@@ -170,12 +263,16 @@
             width: 100%;
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
-            color: #000000;
             letter-spacing: 0;
             line-height: 20px;
             padding-bottom: 23px;
-            border-bottom: 5px solid #572EE5;
+            border-bottom: 5px solid var(--border);
             text-align: center;
         }
+        
+        &.inactive {
+            display: none;
+        }
+        
     }
 }

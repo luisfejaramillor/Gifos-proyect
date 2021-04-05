@@ -15,25 +15,36 @@
 <body>
     <div class="container">
 
-        <header class="header">
-            <div class="logo">
-                <img src="/Gifos-proyect/resources/logo-mobile.svg" alt="logo gifos">
+        <header class="header background active">
+            <div>
+                <img src="/resources/logo-mobile.svg" alt="logo gifos" class="logo"
+                data-tab-target="#refHome">
             </div>
-            <div class="burguer-button">
-                <img src="/Gifos-proyect/resources/burger.svg" alt="burguer">
+            <div class="burguer">
+                <img src="/resources/burger.svg" alt="burguer" class="burguer-button" data-tab-target=".refDrop">
             </div>
         </header>
 
         <main class="main">
-            <div class="search-section">
-                <div class="article1">
+            <div class="drop-menu inactive refDrop" data-tab-content>
+                <ul>
+                    <li class="night-mode" aria-checked="false">Modo Nocturno</li>
+                    <div></div>
+                    <li class="favorites" data-tab-target=".refFavorite">Favoritos</li>
+                    <div></div>
+                    <li class="my-gifs">Mis GIFOS</li>
+                    <div></div>
+                </ul>
+            </div>
+            <div class="search-section refDrop" data-tab-content id="refHome">
+                <div class="article1" >
                     <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span> </h1>
-                    <img src="/Gifos-proyect/resources/ilustra_header.svg" alt="ilustra">
+                    <img src="/resources/ilustra_header.svg" alt="ilustra">
                 </div>
                 <div class="input-search">
                     <div>
                         <input type="text" value="" placeholder="Busca GIFOS y más">
-                        <img src="/Gifos-proyect/resources/icon-search.svg" alt="icon">
+                        <img src="/resources/icon-search.svg" alt="icon">
                         <div class="suggestion-list">
 
                         </div>
@@ -55,7 +66,19 @@
                     </div>
                 </div>
             </div>
-            <div class="trending-section">
+            <div class="favorite-section inactive refFavorite" data-tab-content>
+                <div>
+                    <img src="/resources/icon-favoritos.svg" alt="favorites image">
+                    <h2>Favoritos</h2>
+                </div>
+
+                <div class="gifs-favorites-container">
+
+                </div>
+                <input type="button" value="VER MÁS">
+            </div>
+
+            <div class="trending-section refFavorite" data-tab-content id="refHome">
                 <div>
                     <h2>Trending GIFOS</h2>
                     <p>
@@ -63,22 +86,23 @@
                         GIFOS de nuestra comunidad.
                     </p>
                 </div>
+
                 <div class="gifs-trending-container">
 
                 </div>
             </div>
         </main>
-        <footer class="footer">
+
+        <footer class="footer refFavorite" data-tab-content id="refHome">
             <p>Compartir en:</p>
             <ul>
-                <img src="/Gifos-proyect/resources/icon_facebook.svg" alt="social media">
-                <img src="/Gifos-proyect/resources/icon-twitter.svg" alt="social media">
-                <img src="/Gifos-proyect/resources/icon_instagram.svg" alt="social media">
+                <img src="/resources/icon_facebook.svg" alt="social media">
+                <img src="/resources/icon-twitter.svg" alt="social media">
+                <img src="/resources/icon_instagram.svg" alt="social media">
             </ul>
             <p class="last-p">© GIFOS 2020 All Rights Reserved.</p>
         </footer>
-    </div>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

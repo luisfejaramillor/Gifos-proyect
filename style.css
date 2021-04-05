@@ -5,6 +5,27 @@
           box-sizing: border-box;
 }
 
+[data-tab-content] {
+  display: block;
+}
+
+.inactive[data-tab-content] {
+  display: none;
+}
+
+.container[class="container dark"] {
+  --bg-general: #37383C;
+  --bg-trending: #222326;
+  --h1-h2: #FFFFFF;
+  --p:  #FFFFFF;
+  --span: #50E3C2;
+  --border: #000000;
+  --bg-drop:#000000;
+  --opacity: 1;
+  --dropElements: #ffffff
+;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,10 +35,27 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border: 1px solid black;
+  --bg-general: #FFFFFF;
+  --bg-trending: #F3F5F8;
+  --h1-h2: #572EE5;
+  --p:  #000000;
+  --span: #50E3C2;
+  --border: #572EE5;
+  --bg-drop:#572EE5;
+  --opacity: 0.9;
+  --dropElements: #ffffff;
+}
+
+.container h1, .container h2 {
+  color: var(--h1-h2);
+}
+
+.container p {
+  color: var(--p);
 }
 
 .container .header {
-  border-top: 5px solid #572EE5;
+  border-top: 5px solid var(--border);
   padding: 24px 26px 17.2px 22px;
   height: 95px;
   display: -webkit-box;
@@ -26,9 +64,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background: var(--bg-general);
 }
 
-.container .header .burguer-button {
+.container .header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,7 +76,49 @@
           align-items: center;
 }
 
-.container .main .article1 {
+.container .main {
+  position: relative;
+}
+
+.container .main .drop-menu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-drop);
+  opacity: var(--opacity);
+  z-index: 1;
+  /*
+            &.inactive {
+                display: none;
+            }
+            */
+}
+
+.container .main .drop-menu ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: var(--dropElements);
+  text-align: center;
+  line-height: 60px;
+}
+
+.container .main .drop-menu ul div {
+  width: 41px;
+  margin: 0 auto;
+  border: 1px solid var(--bg-general);
+  opacity: 0.5;
+}
+
+.container .main .search-section {
+  background: var(--bg-general);
+  /*
+            &inactive {
+                display: none;
+            }
+            */
+}
+
+.container .main .search-section .article1 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,26 +132,25 @@
           align-items: center;
 }
 
-.container .main .article1 h1 {
+.container .main .search-section .article1 h1 {
   width: 72.8%;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   text-align: center;
-  color: #572EE5;
   margin-bottom: 31px;
   line-height: 33px;
 }
 
-.container .main .article1 h1 span {
+.container .main .search-section .article1 h1 span {
   font-size: 25px;
-  color: #50E3C2;
+  color: var(--span);
 }
 
-.container .main .article1 img {
+.container .main .search-section .article1 img {
   width: 72.8%;
 }
 
-.container .main .input-search {
+.container .main .search-section .input-search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,17 +164,18 @@
   width: 100%;
 }
 
-.container .main .input-search :first-child {
+.container .main .search-section .input-search :first-child {
   width: 89.6%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--border);
   border-radius: 27px;
   position: relative;
+  background: var(--bg-general);
 }
 
-.container .main .input-search :first-child input {
+.container .main .search-section .input-search :first-child input {
   height: 50px;
   border: none;
   font-family: 'Roboto', sans-serif;
@@ -103,14 +184,14 @@
   outline: none;
 }
 
-.container .main .input-search :first-child img {
+.container .main .search-section .input-search :first-child img {
   width: 20px;
   right: 20px;
   top: 15px;
   position: absolute;
 }
 
-.container .main .article2 {
+.container .main .search-section .article2 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,25 +206,39 @@
   margin-top: 31px;
 }
 
-.container .main .article2 h2 {
+.container .main .search-section .article2 h2 {
   font-family: 'Montserrat', sans-serif;
   width: 25%;
   font-size: 16px;
-  color: #572EE5;
   line-height: 25px;
   text-align: center;
 }
 
-.container .main .article2 p {
+.container .main .search-section .article2 p {
   font-family: 'Montserrat', sans-serif;
   width: 50%;
   text-align: center;
   font-size: 14px;
-  color: #572EE5;
   line-height: 25px;
+  padding-bottom: 45px;
+}
+
+.container .main .search-section .search-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .main .search-section .search-results.inactive {
+  display: none;
+}
+
+.container .main .favorite-section.inactive {
+  display: none;
 }
 
 .container .main .trending-section {
+  background: var(--bg-trending);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -156,7 +251,6 @@
       -ms-flex-align: center;
           align-items: center;
   padding-top: 46px;
-  background: #F3F5F8;
 }
 
 .container .main .trending-section :first-child {
@@ -176,7 +270,6 @@
 .container .main .trending-section :first-child h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  color: #572EE5;
   line-height: 30px;
   text-align: center;
 }
@@ -185,10 +278,14 @@
   margin-top: 7px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: #000000;
   line-height: 23px;
   width: 50%;
   text-align: center;
+  padding-bottom: 32px;
+}
+
+.container .main .trending-section.inactive {
+  display: none;
 }
 
 .container .footer {
@@ -204,12 +301,12 @@
           align-items: center;
   width: 100%;
   padding-top: 47px;
+  background: var(--bg-general);
 }
 
 .container .footer :first-child {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
-  color: #000000;
   letter-spacing: 0;
 }
 
@@ -230,11 +327,14 @@
   width: 100%;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #000000;
   letter-spacing: 0;
   line-height: 20px;
   padding-bottom: 23px;
-  border-bottom: 5px solid #572EE5;
+  border-bottom: 5px solid var(--border);
   text-align: center;
+}
+
+.container .footer.inactive {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
