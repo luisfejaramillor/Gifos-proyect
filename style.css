@@ -105,7 +105,7 @@
 .container .main .drop-menu ul div {
   width: 41px;
   margin: 0 auto;
-  border: 1px solid var(--bg-general);
+  border: 1px solid var(--dropElements);
   opacity: 0.5;
 }
 

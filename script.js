@@ -39,7 +39,14 @@ logo.addEventListener("click", ()=>{
 /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 nightMode.addEventListener("click", ()=>{
+    if(nightMode.innerHTML==="Modo Nocturno"){
+        nightMode.innerHTML="Modo Diurno"
         container.classList.toggle("dark")
+    }else{
+        nightMode.innerHTML="Modo Nocturno"
+        container.classList.toggle("dark")
+    }
+
 })
 
 
