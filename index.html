@@ -22,17 +22,25 @@
             </div>
             <div class="burguer">
                 <img src="/resources/burger.svg" alt="burguer" class="burguer-button" data-tab-target=".refDrop">
-            </div >
+            </div>
+            <div class="tabs inactive" data-tab-content>
+                <ul>
+                    <li class="night-mode-desk">MODO NOCTURNO</li>
+                    <li  data-tab-target=".tabsDesktopFavorites">FAVORITOS</li>
+                    <li  data-tab-target=".tabsDesktopMyGifs">MIS GIFOS</li>
+                    <img src="/resources/button-crear-gifo.svg" alt="create gifs" data-tab-target=".create" class="create-button">
+                </ul>
+            </div>
         </header>
 
         <main class="main">
             <div class="drop-menu inactive refDrop" data-tab-content>
                 <ul>
-                    <li class="night-mode" aria-checked="false">Modo Nocturno</li>
+                    <li class="night-mode">Modo Nocturno</li>
                     <div></div>
                     <li class="favorites" data-tab-target=".refFavorite">Favoritos</li>
                     <div></div>
-                    <li class="my-gifs">Mis GIFOS</li>
+                    <li class="my-gifs" data-tab-target=".refMyGifs">Mis GIFOS</li>
                     <div></div>
                 </ul>
             </div>
@@ -66,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="favorite-section inactive refFavorite" data-tab-content>
+            <div class="favorite-section inactive refFavorite tabsDesktopFavorites" data-tab-content>
                 <div>
                     <img src="/resources/icon-favoritos.svg" alt="favorites image">
                     <h2>Favoritos</h2>
@@ -77,8 +85,14 @@
                 </div>
                 <input type="button" value="VER MÁS">
             </div>
-
-            <div class="trending-section refFavorite" data-tab-content id="refHome">
+            <div class="myGifs-section inactive refMyGifs tabsDesktopMyGifs" data-tab-content>
+                <li>a</li>
+                <li>s</li>
+                <li>sdas</li>
+                <li>ads</li>
+                <li>asd</li>
+            </div>
+            <div class="trending-section refFavorite refMyGifs tabsDesktopFavorites     tabsDesktopMyGifs" data-tab-content id="refHome">
                 <div>
                     <h2>Trending GIFOS</h2>
                     <p>
@@ -91,9 +105,34 @@
 
                 </div>
             </div>
+            <div class="create-section inactive create" data-tab-content>
+                <div class="section1">
+                    <div class="camera-img">
+                        <img src="/resources/element_cinta1.svg" alt="camera">
+                        <img src="/resources/element_cinta2.svg" alt="camera">
+                        <img src="/resources/element-camara.svg" alt="camera">
+                        <img src="/resources/element-luz-camara.svg" alt="camera">
+                    </div>
+                    <div class="camera-section">
+                        <div class="camera-video">
+                            
+                        </div>
+                    </div>
+                    <div class="extra-div">
+
+                    </div>
+                </div>
+                <div class="section2">
+                    <div class="steps-section">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </div>
+                </div>
+            </div>
         </main>
 
-        <footer class="footer refFavorite" data-tab-content id="refHome">
+        <footer class="footer refFavorite refMyGifs tabsDesktopFavorites tabsDesktopMyGifs create" data-tab-content id="refHome">
             <p>Compartir en:</p>
             <ul>
                 <img src="/resources/icon_facebook.svg" alt="social media">

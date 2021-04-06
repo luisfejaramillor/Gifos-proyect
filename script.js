@@ -10,6 +10,9 @@ let favoriteSection = document.querySelector(".favorite-section")
 let logo = document.querySelector(".logo")
 let burguerButton = document.querySelector(".burguer-button")
 let nightMode = document.querySelector(".night-mode")
+let nightModeDesk = document.querySelector(".night-mode-desk")
+let createButton = document.querySelector(".create-button")
+
 
 tabs.forEach(tab => {
     tab.addEventListener("click", () => {
@@ -48,6 +51,22 @@ nightMode.addEventListener("click", ()=>{
     }
 
 })
+
+nightModeDesk.addEventListener("click", ()=>{
+    if(nightModeDesk.innerHTML==="MODO NOCTURNO"){
+        nightModeDesk.innerHTML="MODO DIURNO"
+        container.classList.toggle("dark")
+    }else{
+        nightModeDesk.innerHTML="MODO NOCTURNO"
+        container.classList.toggle("dark")
+    }
+
+})
+
+createButton.addEventListener("click", ()=>{
+    trendingSection.classList.add("inactive")
+})
+
 
 
 
