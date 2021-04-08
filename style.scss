@@ -11,7 +11,7 @@
 .inactive[data-tab-content] {
     display: none;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 .container[class="container dark"] {
     --bg-general: #37383C;
     --bg-trending: #222326;
@@ -237,6 +237,116 @@
                 }
             }
 
+            .second-section {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                .button-slider {
+                    width: 30px;
+                    height: 30px;
+                    opacity: 0.5;
+                    z-index: 2;
+                    margin: auto 10px;
+
+                    &.left {
+                        left: 0;
+                    }
+
+                    &.right {
+                        right: 0;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .gifs-trending-container {
+                    display: flex;
+                    width: 280px;
+                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+
+                    .gifs-trending-wrapper {
+                        height: 200px;
+                        display: flex;
+
+                        .gifs-trending {
+                            width: 280px;
+                            height: 100%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border: 1px solid black;
+                            }
+
+                            .overlay {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0px;
+                                left: 0px;
+                                opacity: 0;
+                                background: #572EE5;
+                                display: flex;
+
+                                .children1 {
+                                    width: 50%;
+                                    display: flex;
+                                    flex-flow: column;
+                                    justify-content: flex-end;
+                                    padding-bottom: 20px;
+                                    padding-left: 10px;
+                                    text-transform: capitalize;
+                                    h3{
+                                        font-family: 'Roboto', sans-serif;
+                                        font-size: 15px;
+                                        color: #FFFFFF;
+                                        margin-bottom: 10px;  
+                                        
+                                    }
+                                    h2{
+                                        font-family: 'Roboto', sans-serif;
+                                        font-size: 15px;
+                                        color: #FFFFFF;
+                                        line-height: 1;   
+                                        text-align: justify;     
+                                        text-align: left; 
+                                                                  
+                                    }
+                                }
+
+                                .children2 {
+                                    display: flex;
+                                    width: 50%;
+                                    justify-content: flex-end;
+                                    gap: 11px;
+                                    padding: 10px 10px;                  
+                                    img{
+                                        border-radius: 8px;
+                                        width: 32px;
+                                        height: 32px;
+                                        cursor: pointer;
+                                    }
+
+                                }
+                            }
+
+                            .overlay:hover {
+                                opacity: 0.6;
+                            }
+
+                            ;
+                        }
+                    }
+                }
+            }
+
             &.inactive {
                 display: none;
             }
@@ -284,6 +394,7 @@
 
     }
 }
+
 
 @media (min-width: 768px) {
     body {
@@ -346,6 +457,7 @@
                             width: 50%;
                             border: 1px solid #572EE5;
                             padding: 21px;
+
                             .camera-video {
                                 border: 1px solid #50E3C2;
                                 width: 100%;
@@ -364,6 +476,7 @@
                         display: none;
                     }
                 }
+
             }
         }
 
