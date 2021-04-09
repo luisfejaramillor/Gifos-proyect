@@ -36,7 +36,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid black;
   --bg-general: #FFFFFF;
   --bg-trending: #F3F5F8;
   --h1-h2: #572EE5;
@@ -84,6 +83,116 @@
   display: block;
   position: relative;
   top: 17px;
+  z-index: 99;
+}
+
+.container .expand-gif {
+  width: 100%;
+  height: 600px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.container .expand-gif .gifs-trending {
+  width: 85%;
+  height: 250px;
+  position: relative;
+}
+
+.container .expand-gif .gifs-trending img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.container .expand-gif .gifs-trending .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  background: #572EE5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.container .expand-gif .gifs-trending .overlay .children1 {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  text-transform: capitalize;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .expand-gif .gifs-trending .overlay .children1 h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  width: 80%;
+  text-align: right;
+}
+
+.container .expand-gif .gifs-trending .overlay .children1 h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 1;
+  text-align: justify;
+  text-align: left;
+}
+
+.container .expand-gif .gifs-trending .overlay .children2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 11px;
+  padding: 10px 10px;
+}
+
+.container .expand-gif .gifs-trending .overlay .children2 img {
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.container .expand-gif .gifs-trending .overlay:hover {
+  opacity: 0.6;
+}
+
+.container .expand-gif.inactive {
+  display: none;
 }
 
 .container .main {
@@ -321,7 +430,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 280px;
+  width: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -337,7 +446,7 @@
 }
 
 .container .main .trending-section .second-section .gifs-trending-container .gifs-trending-wrapper .gifs-trending {
-  width: 280px;
+  width: 200px;
   height: 100%;
   position: relative;
 }
@@ -359,23 +468,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .container .main .trending-section .second-section .gifs-trending-container .gifs-trending-wrapper .gifs-trending .overlay .children1 {
-  width: 50%;
+  width: 100%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   padding-bottom: 20px;
   padding-left: 10px;
   text-transform: capitalize;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .container .main .trending-section .second-section .gifs-trending-container .gifs-trending-wrapper .gifs-trending .overlay .children1 h3 {
@@ -383,6 +496,8 @@
   font-size: 15px;
   color: #FFFFFF;
   margin-bottom: 10px;
+  width: 80%;
+  text-align: right;
 }
 
 .container .main .trending-section .second-section .gifs-trending-container .gifs-trending-wrapper .gifs-trending .overlay .children1 h2 {
@@ -398,7 +513,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  width: 100%;
+  height: 50%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
