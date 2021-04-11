@@ -210,14 +210,84 @@ getUrlsAndDrawGifs()
 ////////////////////////////////////////////////////////////////////////////////
 
 let expandContainer = document.querySelector(".expand-gif")
+
 setTimeout(() => {
     let expandButton = document.querySelectorAll(".expandButton")
     expandButton.forEach(button => {
         button.addEventListener("click", (e) => {
+            console.log(e.path[3].childNodes)
             expandContainer.innerHTML = ""
-            let cardDiv = e.path[3]
-            let clone = cardDiv.cloneNode(true)
-            expandContainer.appendChild(clone)
+            let cardDivGif = e.path[3].childNodes[0]
+            let cardDivOverlay = e.path[3].childNodes[1]
+            let cloneGif = cardDivGif.cloneNode(true)
+            let cloneOverlay = cardDivOverlay.cloneNode(true)
+            expandContainer.appendChild(cloneGif)
+            expandContainer.appendChild(cloneOverlay)
         })
     })
 }, 1000);
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+let inputSearch = document.querySelector(".input")
+let divInputContainer = document.querySelector(".div-input-container")
+let searchButton = document.querySelector(".icon-search")
+let searchButtonHidden = document.querySelector(".icon-search-hidden")
+let suggestionList = document.querySelector(".suggestion-list")
+let shapper = document.querySelector(".shapper")
+inputSearch.addEventListener("keyup",()=>{
+
+    if(inputSearch.value !== ""){
+        suggestionList.innerHTML = ""
+        searchButton.src = "/resources/close-input.svg"
+        searchButtonHidden.classList.remove("inactive")
+        divInputContainer.style.height = `182.97px`
+        searchSuggestions(inputSearch.value)
+    }else{
+        divInputContainer.style.height = ``
+        searchButton.src = "/resources/icon-search.svg"
+        searchButtonHidden.classList.add("inactive")
+        suggestionList.innerHTML = ""
+    }
+})
+
+divInputContainer.addEventListener("click",(e)=>{
+    if(e.target.src === "http://127.0.0.1:5500/resources/close-input.svg"){
+        divInputContainer.style.height = ``
+        searchButton.src = "/resources/icon-search.svg"
+        searchButtonHidden.classList.add("inactive")
+        inputSearch.value = ""
+        suggestionList.innerHTML = ""
+    }
+})
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+let searchSuggestions = async (input)=>{
+    let url = `https://api.giphy.com/v1/gifs/search/tags?api_key=${gifKey}&q=${input}`
+    let result = await fetch(url)
+    let json = await result.json()
+    json.data.forEach(sugges =>{
+        createDivSuggestion(sugges.name)
+    })
+}
+
+let createDivSuggestion = (name)=>{
+    let div = document.createElement("div")
+    createLiImgSuggestion(div, name)
+    suggestionList.appendChild(div)
+}
+
+let createLiImgSuggestion = (div, name)=>{
+    let img = document.createElement("img")
+    let li = document.createElement("li")
+    li.innerHTML = name
+    img.setAttribute("src", "http://127.0.0.1:5500/resources/icon-search.svg")
+    div.appendChild(img)
+    div.appendChild(li)
+}

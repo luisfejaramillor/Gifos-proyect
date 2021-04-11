@@ -11,7 +11,9 @@
 .inactive[data-tab-content] {
     display: none;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .container[class="container dark"] {
     --bg-general: #37383C;
     --bg-trending: #222326;
@@ -73,88 +75,67 @@
 
 
     }
-    .expand-gif{
+
+    .expand-gif {
         width: 100%;
         height: 600px;
         justify-content: center;
+        background: rgb(201, 20, 20);
         position: absolute;
         top: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        background: rgba(255,255,255,0.90);
-        .gifs-trending {
+        background: rgba(255, 255, 255, 0.9);
+
+        img {
             width: 85%;
-            height: 250px;
-            position: relative;
-
-            img {
-                width: 100%;
-                height: 100%;
-                border: 1px solid black;
-            }
-
-            .overlay {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0px;
-                left: 0px;
-                opacity: 0;
-                background: #572EE5;
-                display: flex;
-                flex-direction: column-reverse;
-
-                
-                .children1 {
-                    width: 100%;
-                    height: 50%;
-                    display: flex;                                   
-                    padding-bottom: 20px;
-                    padding-left: 10px;                                  
-                    text-transform: capitalize;                                 
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                    h3{
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 15px;
-                        color: #FFFFFF;
-                        margin-bottom: 10px;
-                        width: 80%;  
-                        text-align: right;
-                    }
-                    h2{
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 15px;
-                        color: #FFFFFF;
-                        line-height: 1;   
-                        text-align: justify;     
-                        text-align: left;                                    
-                    }
-                }
-
-                .children2 {
-                    display: flex;
-                    width: 100%;
-                    height: 50%;
-                    justify-content: flex-end;
-                    gap: 11px;
-                    padding: 10px 10px;      
-                    img{
-                        border-radius: 8px;
-                        width: 32px;
-                        height: 32px;
-                        cursor: pointer;
-                    }
-
-                }
-            }
-
-            .overlay:hover {
-                opacity: 0.6;
-            }
-
-            ;
+            height: 220px;
         }
+
+        .overlay {
+            width: 85%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            text-transform: capitalize;
+
+            .children1 {
+                margin-top: 14px;
+
+                h3 {
+                    font-size: 15px;
+                    font-family: 'Roboto', sans-serif;
+                    color: #000000;
+                    text-align: left;
+                    margin-bottom: 6px;
+                    height: 18px;
+                }
+
+                h2 {
+                    font-size: 16px;
+                    font-family: 'Montserrat', sans-serif;
+                    color: #000000;
+                    text-align: left;
+                }
+            }
+
+            .children2 {
+                margin-top: 26px;
+                display: flex;
+                justify-content: space-between;
+
+                img {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                :last-child {
+                    display: none;
+                }
+            }
+        }
+
         &.inactive {
             display: none;
         }
@@ -192,7 +173,7 @@
             }
         }
 
-        
+
 
         .search-section {
             background: var(--bg-general);
@@ -228,31 +209,89 @@
                 align-items: center;
                 width: 100%;
 
-                :first-child {
+                .div-input-container {
                     width: 89.6%;
                     display: flex;
                     border: 1px solid var(--border-input);
                     border-radius: 27px;
                     position: relative;
                     background: var(--bg-general);
+                    flex-direction: column;
+                    align-items: center;
+                    overflow: hidden;
 
-                    input {
-                        height: 50px;
-                        border: none;
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 16px;
-                        padding-left: 16.46%;
-                        outline: none;
+                    .div-input-button {
+                        width: 65%;
+
+                        input {
+                            height: 50px;
+                            width: 100%;
+                            border: none;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            outline: none;
+
+                        }
+
+                        .icon-search-hidden {
+                            width: 20px;
+                            right: 20px;
+                            position: absolute;
+                            left: 21px;
+
+                            &.inactive {
+                                display: none;
+                            }
+                        }
+
+                        img {
+                            width: 16px;
+                            right: 16px;
+                            top: 16px;
+                            position: absolute;
+                        }
                     }
 
-                    img {
-                        width: 20px;
-                        right: 20px;
-                        top: 15px;
-                        position: absolute;
+                    .suggestion-list {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        position: relative;
+                        gap: 10px;
+                        left: 21px;
+                        text-transform: capitalize;
+
+                        div {
+                            display: flex;
+                            height: 14.6px;
+                            width: 100%;
+
+                            img {
+                                width: 15.8px;
+                                height: 15.8px;
+                                margin-right: 14.6px;
+                            }
+
+                            li {
+                                font-family: 'Roboto', sans-serif;
+                                position: absolute;
+                                left: 10%;
+                                list-style: none;
+                                font-size: 16px;
+                            }
+
+                        }
+
+                        div:last-child {
+                            margin-bottom: 18px;
+                        }
                     }
                 }
+
             }
+
+
 
             .article2 {
                 width: 100%;
@@ -302,7 +341,6 @@
             flex-flow: column wrap;
             align-items: center;
             padding-top: 46px;
-
             :first-child {
                 display: flex;
                 flex-flow: column wrap;
@@ -332,7 +370,7 @@
                 width: 100%;
                 justify-content: center;
                 align-items: center;
-
+                margin-bottom: 82px;
                 .button-slider {
                     width: 30px;
                     height: 30px;
@@ -386,31 +424,33 @@
                                 display: flex;
                                 flex-direction: column-reverse;
 
-                                
+
                                 .children1 {
                                     width: 100%;
                                     height: 50%;
-                                    display: flex;                                   
+                                    display: flex;
                                     padding-bottom: 20px;
-                                    padding-left: 10px;                                  
-                                    text-transform: capitalize;                                 
+                                    padding-left: 10px;
+                                    text-transform: capitalize;
                                     align-items: flex-start;
                                     justify-content: flex-end;
-                                    h3{
+
+                                    h3 {
                                         font-family: 'Roboto', sans-serif;
                                         font-size: 15px;
                                         color: #FFFFFF;
                                         margin-bottom: 10px;
-                                        width: 80%;  
+                                        width: 80%;
                                         text-align: right;
                                     }
-                                    h2{
+
+                                    h2 {
                                         font-family: 'Roboto', sans-serif;
                                         font-size: 15px;
                                         color: #FFFFFF;
-                                        line-height: 1;   
-                                        text-align: justify;     
-                                        text-align: left;                                    
+                                        line-height: 1;
+                                        text-align: justify;
+                                        text-align: left;
                                     }
                                 }
 
@@ -420,8 +460,9 @@
                                     height: 50%;
                                     justify-content: flex-end;
                                     gap: 11px;
-                                    padding: 10px 10px;      
-                                    img{
+                                    padding: 10px 10px;
+
+                                    img {
                                         border-radius: 8px;
                                         width: 32px;
                                         height: 32px;

@@ -92,103 +92,76 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: #c91414;
   position: absolute;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background: rgba(255, 255, 255, 0.9);
 }
 
-.container .expand-gif .gifs-trending {
+.container .expand-gif img {
   width: 85%;
-  height: 250px;
-  position: relative;
+  height: 220px;
 }
 
-.container .expand-gif .gifs-trending img {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-}
-
-.container .expand-gif .gifs-trending .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
-  background: #572EE5;
+.container .expand-gif .overlay {
+  width: 85%;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
-.container .expand-gif .gifs-trending .overlay .children1 {
-  width: 100%;
-  height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 20px;
-  padding-left: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-transform: capitalize;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 
-.container .expand-gif .gifs-trending .overlay .children1 h3 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-  width: 80%;
-  text-align: right;
+.container .expand-gif .overlay .children1 {
+  margin-top: 14px;
 }
 
-.container .expand-gif .gifs-trending .overlay .children1 h2 {
-  font-family: 'Roboto', sans-serif;
+.container .expand-gif .overlay .children1 h3 {
   font-size: 15px;
-  color: #FFFFFF;
-  line-height: 1;
-  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  text-align: left;
+  margin-bottom: 6px;
+  height: 18px;
+}
+
+.container .expand-gif .overlay .children1 h2 {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
   text-align: left;
 }
 
-.container .expand-gif .gifs-trending .overlay .children2 {
+.container .expand-gif .overlay .children2 {
+  margin-top: 26px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 50%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  gap: 11px;
-  padding: 10px 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.container .expand-gif .gifs-trending .overlay .children2 img {
-  border-radius: 8px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+.container .expand-gif .overlay .children2 img {
+  width: 36px;
+  height: 36px;
 }
 
-.container .expand-gif .gifs-trending .overlay:hover {
-  opacity: 0.6;
+.container .expand-gif .overlay .children2 :last-child {
+  display: none;
 }
 
 .container .expand-gif.inactive {
@@ -273,7 +246,7 @@
   width: 100%;
 }
 
-.container .main .search-section .input-search :first-child {
+.container .main .search-section .input-search .div-input-container {
   width: 89.6%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,22 +255,89 @@
   border-radius: 27px;
   position: relative;
   background: var(--bg-general);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
 }
 
-.container .main .search-section .input-search :first-child input {
+.container .main .search-section .input-search .div-input-container .div-input-button {
+  width: 65%;
+}
+
+.container .main .search-section .input-search .div-input-container .div-input-button input {
   height: 50px;
+  width: 100%;
   border: none;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  padding-left: 16.46%;
   outline: none;
 }
 
-.container .main .search-section .input-search :first-child img {
+.container .main .search-section .input-search .div-input-container .div-input-button .icon-search-hidden {
   width: 20px;
   right: 20px;
-  top: 15px;
   position: absolute;
+  left: 21px;
+}
+
+.container .main .search-section .input-search .div-input-container .div-input-button .icon-search-hidden.inactive {
+  display: none;
+}
+
+.container .main .search-section .input-search .div-input-container .div-input-button img {
+  width: 16px;
+  right: 16px;
+  top: 16px;
+  position: absolute;
+}
+
+.container .main .search-section .input-search .div-input-container .suggestion-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  gap: 10px;
+  left: 21px;
+  text-transform: capitalize;
+}
+
+.container .main .search-section .input-search .div-input-container .suggestion-list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 14.6px;
+  width: 100%;
+}
+
+.container .main .search-section .input-search .div-input-container .suggestion-list div img {
+  width: 15.8px;
+  height: 15.8px;
+  margin-right: 14.6px;
+}
+
+.container .main .search-section .input-search .div-input-container .suggestion-list div li {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  left: 10%;
+  list-style: none;
+  font-size: 16px;
+}
+
+.container .main .search-section .input-search .div-input-container .suggestion-list div:last-child {
+  margin-bottom: 18px;
 }
 
 .container .main .search-section .article2 {
@@ -404,6 +444,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 82px;
 }
 
 .container .main .trending-section .second-section .button-slider {
