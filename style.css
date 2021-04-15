@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -376,6 +375,132 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .main .search-section .search-results .gifs-search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 21px;
+  overflow: hidden;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching {
+  width: 80%;
+  height: 220px;
+  position: relative;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  background: #572EE5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay .children1 {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  text-transform: capitalize;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay .children1 h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  width: 80%;
+  text-align: right;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay .children1 h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 1;
+  text-align: justify;
+  text-align: left;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay .children2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 11px;
+  padding: 10px 10px;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay .children2 img {
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.container .main .search-section .search-results .gifs-search-container .gifs-searching .overlay:hover {
+  opacity: 0.6;
+}
+
+.container .main .search-section .search-results .see-more {
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  padding: 17px 32px;
+  margin: 79px auto;
+}
+
+.container .main .search-section .search-results .see-more p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+}
+
+.container .main .search-section .search-results .see-more.inactive {
+  display: none;
 }
 
 .container .main .search-section .search-results.inactive {
@@ -575,6 +700,10 @@
 }
 
 .container .main .trending-section.inactive {
+  display: none;
+}
+
+.container .main.inactive {
   display: none;
 }
 
